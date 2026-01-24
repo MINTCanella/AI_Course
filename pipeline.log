@@ -1,0 +1,56 @@
+2026-01-24 18:56:00,424 - __main__ - INFO - Starting data processing pipeline...
+2026-01-24 18:56:00,424 - __main__ - INFO - ==================================================
+2026-01-24 18:56:00,424 - __main__ - INFO - Saving results to directory: files
+2026-01-24 18:56:00,424 - pipeline.handlers - INFO - Loading data from files/hh.csv...
+2026-01-24 18:56:06,734 - pipeline.handlers - INFO - Loaded 66945 rows.
+2026-01-24 18:56:06,735 - pipeline.handlers - INFO - Cleaning data...
+2026-01-24 18:56:24,152 - pipeline.handlers - INFO - After cleaning: 66945 rows.
+2026-01-24 18:56:24,153 - pipeline.handlers - INFO - Extracting features...
+2026-01-24 18:56:24,436 - pipeline.handlers - INFO - Salaries before processing: min=0, max=10000000, median=60000
+2026-01-24 18:56:24,437 - pipeline.handlers - INFO - Found 133 salary outliers (>500000 RUB)
+2026-01-24 18:56:24,439 - pipeline.handlers - INFO - Outliers replaced with median: 60000 RUB
+2026-01-24 18:56:24,440 - pipeline.handlers - INFO - Applied logarithmic salary transformation
+2026-01-24 18:56:24,497 - pipeline.handlers - INFO - Processing multicollinearity...
+2026-01-24 18:56:24,497 - pipeline.handlers - INFO - Analyzing 4 numeric features
+2026-01-24 18:56:24,501 - pipeline.handlers - INFO - No high correlations found
+2026-01-24 18:56:24,501 - pipeline.handlers - INFO - Processing missing values...
+2026-01-24 18:56:24,829 - pipeline.handlers - INFO - Encoding categorical features...
+2026-01-24 18:56:24,829 - pipeline.handlers - INFO - Found 13 categorical features
+2026-01-24 18:56:27,306 - pipeline.handlers - INFO - After encoding: 17 features
+2026-01-24 18:56:27,306 - pipeline.handlers - INFO - Saving feature metadata...
+2026-01-24 18:56:27,306 - pipeline.handlers - INFO - Found 17 features
+2026-01-24 18:56:27,307 - pipeline.handlers - INFO - Metadata saved to files/feature_metadata.json
+2026-01-24 18:56:27,308 - pipeline.handlers - INFO - Feature names saved to files/feature_names.txt
+2026-01-24 18:56:27,309 - pipeline.handlers - INFO - Processing outliers...
+2026-01-24 18:56:27,312 - pipeline.handlers - INFO - Пол, возраст: 2751 outliers (4.1%)
+2026-01-24 18:56:27,319 - pipeline.handlers - INFO - Ищет работу на должность:: 5742 outliers (8.6%)
+2026-01-24 18:56:27,325 - pipeline.handlers - INFO - Город: 10736 outliers (16.0%)
+2026-01-24 18:56:27,332 - pipeline.handlers - INFO - Опыт (двойное нажатие для полной версии): 384 outliers (0.6%)
+2026-01-24 18:56:27,337 - pipeline.handlers - INFO - Последенее/нынешнее место работы: 12718 outliers (19.0%)
+2026-01-24 18:56:27,341 - pipeline.handlers - INFO - Последеняя/нынешняя должность: 8713 outliers (13.0%)
+2026-01-24 18:56:27,346 - pipeline.handlers - INFO - Образование и ВУЗ: 2480 outliers (3.7%)
+2026-01-24 18:56:27,350 - pipeline.handlers - INFO - Обновление резюме: 1822 outliers (2.7%)
+2026-01-24 18:56:27,356 - pipeline.handlers - INFO - Пол: 14250 outliers (21.3%)
+2026-01-24 18:56:27,360 - pipeline.handlers - INFO - ЗП_число: 2262 outliers (3.4%)
+2026-01-24 18:56:27,367 - pipeline.handlers - INFO - Normalizing numeric features...
+2026-01-24 18:56:27,376 - pipeline.handlers - INFO - Using RobustScaler (robust to outliers)
+2026-01-24 18:56:27,409 - pipeline.handlers - INFO - Using StandardScaler (mean=0, std=1)
+2026-01-24 18:56:27,434 - pipeline.handlers - INFO - Splitting into X and y...
+2026-01-24 18:56:27,434 - pipeline.handlers - INFO - Found 16 features
+2026-01-24 18:56:27,454 - pipeline.handlers - INFO - X shape: (66945, 16), y shape: (66945,)
+2026-01-24 18:56:27,454 - pipeline.handlers - INFO - X dtype: float64, y dtype: float64
+2026-01-24 18:56:27,458 - pipeline.handlers - INFO - Saving to .npy files...
+2026-01-24 18:56:27,479 - pipeline.handlers - INFO - Saved: files/x_data.npy ((66945, 16), float64)
+2026-01-24 18:56:27,479 - pipeline.handlers - INFO - Saved: files/y_data.npy ((66945,), float64)
+2026-01-24 18:56:27,480 - pipeline.handlers - INFO - Feature names saved to files/feature_names.txt
+2026-01-24 18:56:27,481 - pipeline.handlers - INFO - Feature metadata saved to files/feature_names.json
+2026-01-24 18:56:27,485 - pipeline.handlers - INFO - Files loaded correctly
+2026-01-24 18:56:27,485 - pipeline.handlers - INFO - Feature names match X dimension
+2026-01-24 18:56:27,861 - __main__ - INFO - ==================================================
+2026-01-24 18:56:27,861 - __main__ - INFO - Processing completed successfully!
+2026-01-24 18:56:27,862 - __main__ - INFO - Created files in directory 'files':
+2026-01-24 18:56:27,862 - __main__ - INFO -   - x_data.npy
+2026-01-24 18:56:27,862 - __main__ - INFO -   - y_data.npy
+2026-01-24 18:56:27,862 - __main__ - INFO -   - feature_names.txt
+2026-01-24 18:56:27,863 - __main__ - INFO -   - feature_names.json
+2026-01-24 18:56:27,863 - __main__ - INFO -   - pipeline.log (this log file)
