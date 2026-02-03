@@ -5,10 +5,11 @@ Data processing pipeline module.
 from .chain import Handler
 from .handlers import (
     DataLoader, DataCleaner, FeatureExtractor,
-    MissingValueHandler, CategoricalEncoder,
-    Normalizer, TargetSplitter, NumpySaver
+    MissingValueHandler, Normalizer, TargetSplitter, NumpySaver,
+    CurrencyConverter, DataAggregator, MulticollinearityHandler,
+    SmartCategoricalEncoder, FeatureMetadataSaver, OutlierHandler
 )
-from .pipeline_utils import create_pipeline
+from .pipeline_utils import create_improved_pipeline, create_simple_pipeline
 
 __all__ = [
     'Handler',
@@ -16,9 +17,15 @@ __all__ = [
     'DataCleaner',
     'FeatureExtractor',
     'MissingValueHandler',
-    'CategoricalEncoder',
     'Normalizer',
     'TargetSplitter',
     'NumpySaver',
-    'create_pipeline'
+    'CurrencyConverter',
+    'DataAggregator',
+    'MulticollinearityHandler',
+    'SmartCategoricalEncoder',
+    'FeatureMetadataSaver',
+    'OutlierHandler',
+    'create_improved_pipeline',
+    'create_simple_pipeline'
 ]
