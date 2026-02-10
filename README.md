@@ -17,14 +17,8 @@ python main.py files/hh.csv
 ```bash
 python linear_model.py --x-data files/x_data.npy --y-data files/y_data.npy 
 ```
-## Результаты линейной регрессии: 
+5. Запустите классификацию с POC. 
 ```
-TEST SET METRICS:
-----------------------------------------
-R-squared (RUB): 0.5195
-MAE (RUB): 0.0452
-RMSE (RUB): 0.0661
-MAPE: 136.32%
-Within 20% error: 74.08%
-Within 30% error: 83.87%
+python run_classification.py files/hh.csv
+Результаты находятся в файле classification_results/classification_poc_report.md
 ```

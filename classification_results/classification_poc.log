@@ -1,0 +1,103 @@
+2026-02-10 03:34:07,408 - __main__ - INFO - ============================================================
+2026-02-10 03:34:07,408 - __main__ - INFO - DEVELOPER LEVEL CLASSIFICATION PoC
+2026-02-10 03:34:07,408 - __main__ - INFO - ============================================================
+2026-02-10 03:34:07,409 - __main__ - INFO - Loading processed data...
+2026-02-10 03:34:07,409 - __main__ - INFO - Found data in: files
+2026-02-10 03:34:07,414 - __main__ - INFO - Loaded 25 feature names
+2026-02-10 03:34:07,414 - __main__ - INFO - X shape: (66945, 25)
+2026-02-10 03:34:07,414 - __main__ - INFO - y shape: (66945,)
+2026-02-10 03:34:07,414 - __main__ - INFO - Extracting developer levels from raw data...
+2026-02-10 03:34:07,414 - __main__ - INFO - Found raw data at: files\hh.csv
+2026-02-10 03:34:07,415 - __main__ - INFO - Loading raw data from files\hh.csv...
+2026-02-10 03:34:14,022 - __main__ - INFO - Raw data loaded: 66945 rows
+2026-02-10 03:34:14,022 - __main__ - INFO - Using position column: '»щет работу на должность:'
+2026-02-10 03:34:14,050 - __main__ - INFO - Extracting levels from position titles...
+2026-02-10 03:34:14,105 - __main__ - INFO - Found 1875 junior developers by title
+2026-02-10 03:34:14,155 - __main__ - INFO - Found 5411 middle developers by title
+2026-02-10 03:34:14,210 - __main__ - INFO - Found 3909 senior developers by title
+2026-02-10 03:34:14,210 - __main__ - INFO - Filtering IT positions...
+2026-02-10 03:34:14,600 - __main__ - INFO - IT positions: 13623 out of 66945
+2026-02-10 03:34:14,601 - __main__ - INFO - ============================================================
+2026-02-10 03:34:14,602 - __main__ - INFO - FINAL LEVEL DISTRIBUTION:
+2026-02-10 03:34:14,602 - __main__ - INFO - Total developers: 6703
+2026-02-10 03:34:14,602 - __main__ - INFO -   Junior: 627 (9.4%)
+2026-02-10 03:34:14,602 - __main__ - INFO -   Middle: 4808 (71.7%)
+2026-02-10 03:34:14,602 - __main__ - INFO -   Senior: 1268 (18.9%)
+2026-02-10 03:34:14,602 - __main__ - INFO - ============================================================
+2026-02-10 03:34:14,718 - __main__ - INFO - Preparing classification data...
+2026-02-10 03:34:14,722 - __main__ - INFO - Classification data shape: X=(6703, 25), y=(6703,)
+2026-02-10 03:34:14,722 - __main__ - INFO - Classes: [np.str_('junior'), np.str_('middle'), np.str_('senior')]
+2026-02-10 03:34:14,723 - __main__ - INFO -   Class junior: 627 samples (9.4%)
+2026-02-10 03:34:14,723 - __main__ - INFO -   Class middle: 4808 samples (71.7%)
+2026-02-10 03:34:14,723 - __main__ - INFO -   Class senior: 1268 samples (18.9%)
+2026-02-10 03:34:14,726 - __main__ - INFO - Train set: 4692 samples
+2026-02-10 03:34:14,726 - __main__ - INFO - Test set: 2011 samples
+2026-02-10 03:34:14,726 - __main__ - INFO - Training logistic model...
+2026-02-10 03:34:14,729 - __main__ - ERROR - Error in pipeline: LogisticRegression.__init__() got an unexpected keyword argument 'multi_class'
+2026-02-10 03:34:14,730 - __main__ - ERROR - Traceback (most recent call last):
+  File "C:\Users\choco\PycharmProjects\parsing\classification_pipeline.py", line 449, in run_pipeline
+    self.train_model(X_train, y_train)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\choco\PycharmProjects\parsing\classification_pipeline.py", line 313, in train_model
+    self.model = LogisticRegression(
+                 ~~~~~~~~~~~~~~~~~~^
+        max_iter=1000,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        multi_class='ovr'
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: LogisticRegression.__init__() got an unexpected keyword argument 'multi_class'
+
+2026-02-10 03:34:16,053 - __main__ - INFO - ============================================================
+2026-02-10 03:34:16,053 - __main__ - INFO - DEVELOPER LEVEL CLASSIFICATION PoC
+2026-02-10 03:34:16,053 - __main__ - INFO - ============================================================
+2026-02-10 03:34:16,053 - __main__ - INFO - Loading processed data...
+2026-02-10 03:34:16,053 - __main__ - INFO - Found data in: files
+2026-02-10 03:34:16,058 - __main__ - INFO - Loaded 25 feature names
+2026-02-10 03:34:16,058 - __main__ - INFO - X shape: (66945, 25)
+2026-02-10 03:34:16,058 - __main__ - INFO - y shape: (66945,)
+2026-02-10 03:34:16,058 - __main__ - INFO - Extracting developer levels from raw data...
+2026-02-10 03:34:16,058 - __main__ - INFO - Found raw data at: files\hh.csv
+2026-02-10 03:34:16,058 - __main__ - INFO - Loading raw data from files\hh.csv...
+2026-02-10 03:34:23,434 - __main__ - INFO - Raw data loaded: 66945 rows
+2026-02-10 03:34:23,435 - __main__ - INFO - Using position column: '»щет работу на должность:'
+2026-02-10 03:34:23,462 - __main__ - INFO - Extracting levels from position titles...
+2026-02-10 03:34:23,517 - __main__ - INFO - Found 1875 junior developers by title
+2026-02-10 03:34:23,567 - __main__ - INFO - Found 5411 middle developers by title
+2026-02-10 03:34:23,622 - __main__ - INFO - Found 3909 senior developers by title
+2026-02-10 03:34:23,622 - __main__ - INFO - Filtering IT positions...
+2026-02-10 03:34:24,012 - __main__ - INFO - IT positions: 13623 out of 66945
+2026-02-10 03:34:24,014 - __main__ - INFO - ============================================================
+2026-02-10 03:34:24,014 - __main__ - INFO - FINAL LEVEL DISTRIBUTION:
+2026-02-10 03:34:24,014 - __main__ - INFO - Total developers: 6703
+2026-02-10 03:34:24,014 - __main__ - INFO -   Junior: 627 (9.4%)
+2026-02-10 03:34:24,014 - __main__ - INFO -   Middle: 4808 (71.7%)
+2026-02-10 03:34:24,015 - __main__ - INFO -   Senior: 1268 (18.9%)
+2026-02-10 03:34:24,015 - __main__ - INFO - ============================================================
+2026-02-10 03:34:24,128 - __main__ - INFO - Preparing classification data...
+2026-02-10 03:34:24,135 - __main__ - INFO - Classification data shape: X=(6703, 25), y=(6703,)
+2026-02-10 03:34:24,135 - __main__ - INFO - Classes: [np.str_('junior'), np.str_('middle'), np.str_('senior')]
+2026-02-10 03:34:24,135 - __main__ - INFO -   Class junior: 627 samples (9.4%)
+2026-02-10 03:34:24,136 - __main__ - INFO -   Class middle: 4808 samples (71.7%)
+2026-02-10 03:34:24,136 - __main__ - INFO -   Class senior: 1268 samples (18.9%)
+2026-02-10 03:34:24,142 - __main__ - INFO - Train set: 4692 samples
+2026-02-10 03:34:24,142 - __main__ - INFO - Test set: 2011 samples
+2026-02-10 03:34:24,142 - __main__ - INFO - Training random_forest model...
+2026-02-10 03:34:24,341 - __main__ - INFO - Model trained successfully
+2026-02-10 03:34:24,384 - __main__ - INFO - Training accuracy: 1.0000
+2026-02-10 03:34:24,384 - __main__ - INFO - Evaluating model...
+2026-02-10 03:34:24,417 - __main__ - INFO - ============================================================
+2026-02-10 03:34:24,417 - __main__ - INFO - CLASSIFICATION RESULTS:
+2026-02-10 03:34:24,417 - __main__ - INFO - Model: random_forest
+2026-02-10 03:34:24,417 - __main__ - INFO - Overall Accuracy: 0.8727
+2026-02-10 03:34:24,417 - __main__ - INFO - Per-class metrics:
+2026-02-10 03:34:24,417 - __main__ - INFO -   JUNIOR  : Precision=0.7885, Recall=0.6543, F1=0.7151, Support=188
+2026-02-10 03:34:24,417 - __main__ - INFO -   MIDDLE  : Precision=0.8941, Recall=0.9418, F1=0.9173, Support=1443
+2026-02-10 03:34:24,418 - __main__ - INFO -   SENIOR  : Precision=0.8149, Recall=0.7184, F1=0.7636, Support=380
+2026-02-10 03:34:24,450 - __main__ - INFO - Model saved to classification_results\developer_classifier_model.pkl
+2026-02-10 03:34:24,452 - __main__ - INFO - Final report saved to classification_results\classification_poc_report.md
+2026-02-10 03:34:24,452 - __main__ - INFO - ============================================================
+2026-02-10 03:34:24,452 - __main__ - INFO - PoC COMPLETED SUCCESSFULLY!
+2026-02-10 03:34:24,452 - __main__ - INFO - ============================================================
