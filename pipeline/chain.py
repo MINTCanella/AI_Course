@@ -7,16 +7,13 @@ from typing import Any, Optional
 
 
 class Handler(ABC):
-    """
-    Abstract base class for handlers in Chain of Responsibility pattern.
-    """
+    """Abstract base class for handlers in Chain of Responsibility pattern."""
 
     def __init__(self) -> None:
         self._next_handler: Optional['Handler'] = None
 
     def set_next(self, handler: 'Handler') -> 'Handler':
-        """
-        Set next handler in chain.
+        """Set next handler in chain.
 
         Args:
             handler: Next handler to process data
@@ -29,8 +26,7 @@ class Handler(ABC):
 
     @abstractmethod
     def handle(self, data: Any) -> Any:
-        """
-        Process data. Must be implemented by subclasses.
+        """Process data. Must be implemented by subclasses.
 
         Args:
             data: Input data to process
@@ -41,8 +37,7 @@ class Handler(ABC):
         pass
 
     def _next(self, data: Any) -> Any:
-        """
-        Pass data to next handler in chain.
+        """Pass data to next handler in chain.
 
         Args:
             data: Data to pass to next handler
@@ -53,3 +48,8 @@ class Handler(ABC):
         if self._next_handler:
             return self._next_handler.handle(data)
         return data
+
+
+class Pipeline:
+    """Pipeline class placeholder."""
+    pass

@@ -1,0 +1,129 @@
+2026-02-03 19:30:12,501 - __main__ - INFO - Starting IMPROVED data processing pipeline...
+2026-02-03 19:30:12,501 - __main__ - INFO - ============================================================
+2026-02-03 19:30:12,501 - __main__ - INFO - IMPROVEMENTS:
+2026-02-03 19:30:12,501 - __main__ - INFO - 1. Currency conversion to RUB
+2026-02-03 19:30:12,502 - __main__ - INFO - 2. Smart categorical encoding
+2026-02-03 19:30:12,502 - __main__ - INFO - 3. Top-100 cities, Top-500 positions for One-Hot
+2026-02-03 19:30:12,502 - __main__ - INFO - 4. Label encoding for ordinal features
+2026-02-03 19:30:12,502 - __main__ - INFO - 5. Data aggregation for duplicate feature combinations
+2026-02-03 19:30:12,502 - __main__ - INFO - ============================================================
+2026-02-03 19:30:12,502 - __main__ - INFO - Using IMPROVED pipeline (better for linear models)
+2026-02-03 19:30:12,503 - __main__ - INFO - Saving results to directory: files
+2026-02-03 19:30:12,503 - pipeline.handlers - INFO - Loading data from files/hh.csv...
+2026-02-03 19:30:18,923 - pipeline.handlers - INFO - Loaded 66945 rows.
+2026-02-03 19:30:18,924 - pipeline.handlers - INFO - Cleaning data...
+2026-02-03 19:30:38,336 - pipeline.handlers - INFO - After cleaning: 66945 rows.
+2026-02-03 19:30:38,337 - pipeline.handlers - INFO - Converting currency to rubles...
+2026-02-03 19:30:38,523 - pipeline.handlers - INFO - Converted 66584 salaries to rubles
+2026-02-03 19:30:38,523 - pipeline.handlers - INFO - Range: 1 - 90000000 RUB
+2026-02-03 19:30:38,525 - pipeline.handlers - INFO - Median: 1500000 RUB
+2026-02-03 19:30:38,525 - pipeline.handlers - INFO - Extracting features...
+2026-02-03 19:30:38,664 - pipeline.handlers - INFO - Salaries before processing: min=0, max=90000000, median=1500000
+2026-02-03 19:30:38,665 - pipeline.handlers - INFO - Salaries before processing: min=0, max=90000000, median=1500000
+2026-02-03 19:30:38,666 - pipeline.handlers - INFO - Valid salaries (>0): 66584/66945
+2026-02-03 19:30:38,667 - pipeline.handlers - INFO - Median valid salary: 1500000
+2026-02-03 19:30:38,668 - pipeline.handlers - INFO - Found 50468 salary outliers (>1000000 RUB)
+2026-02-03 19:30:38,671 - pipeline.handlers - INFO - Outliers replaced with 95th percentile: 900000 RUB
+2026-02-03 19:30:38,676 - pipeline.handlers - INFO - Invalid salaries (361) replaced with median log salary: 13.71
+2026-02-03 19:30:38,677 - pipeline.handlers - INFO - After processing: min=0.69, max=13.82, median=13.71
+2026-02-03 19:30:38,739 - pipeline.handlers - INFO - Creating advanced features...
+2026-02-03 19:30:39,980 - pipeline.handlers - INFO -   Created 11 new features
+2026-02-03 19:30:39,980 - pipeline.handlers - INFO -   New features: ['Длина_названия_должности', 'Должность_менеджер', 'Должность_разработчик', 'Должность_аналитик', 'Должность_директор', 'Должность_специалист', 'Должность_инженер', 'Должность_руководитель', 'Высшее_образование', 'Техническое_образование']
+2026-02-03 19:30:39,980 - pipeline.handlers - INFO -     ... and 1 more features
+2026-02-03 19:30:39,980 - pipeline.handlers - INFO - Aggregating data...
+2026-02-03 19:30:42,603 - pipeline.handlers - INFO - Unique feature combinations: 66945 out of 66945
+2026-02-03 19:30:46,031 - pipeline.handlers - INFO - After aggregation: 66945 rows (reduced by 0)
+2026-02-03 19:30:46,031 - pipeline.handlers - INFO - Average group size: 1.0
+2026-02-03 19:30:46,032 - pipeline.handlers - INFO - Handling missing values...
+2026-02-03 19:30:46,238 - pipeline.handlers - INFO - Smart encoding categorical features...
+2026-02-03 19:30:46,239 - pipeline.handlers - INFO - Found 14 categorical features
+2026-02-03 19:30:46,251 - pipeline.handlers - INFO -   Removing Пол, возраст: 17935 unique values
+2026-02-03 19:30:46,266 - pipeline.handlers - INFO -   Removing Ищет работу на должность:: 17760 unique values
+2026-02-03 19:30:46,281 - pipeline.handlers - INFO -   Removing Город: 11478 unique values
+2026-02-03 19:30:47,345 - pipeline.handlers - INFO -   Removing Опыт (двойное нажатие для полной версии): 51767 unique values
+2026-02-03 19:30:47,362 - pipeline.handlers - INFO -   Removing Последенее/нынешнее место работы: 34373 unique values
+2026-02-03 19:30:47,372 - pipeline.handlers - INFO -   Removing Последеняя/нынешняя должность: 19593 unique values
+2026-02-03 19:30:47,477 - pipeline.handlers - INFO -   Removing Образование и ВУЗ: 45681 unique values
+2026-02-03 19:30:47,482 - pipeline.handlers - INFO -   Removing Обновление резюме: 22208 unique values
+2026-02-03 19:30:47,538 - pipeline.handlers - INFO -   One-Hot for Пол: 3 categories
+2026-02-03 19:30:47,549 - pipeline.handlers - INFO -   One-Hot for Возрастная_группа: 6 categories
+2026-02-03 19:30:47,566 - pipeline.handlers - INFO -   Target Encoding for ЗП
+2026-02-03 19:30:47,577 - pipeline.handlers - INFO -   Target Encoding for Занятость
+2026-02-03 19:30:47,588 - pipeline.handlers - INFO -   Target Encoding for График
+2026-02-03 19:30:47,604 - pipeline.handlers - INFO -   Target Encoding for Город_очищенный
+2026-02-03 19:30:47,617 - pipeline.handlers - INFO - After encoding: 27 features
+2026-02-03 19:30:47,618 - pipeline.handlers - INFO - Handling multicollinearity...
+2026-02-03 19:30:47,619 - pipeline.handlers - INFO - Analyzing 19 numeric features
+2026-02-03 19:30:47,677 - pipeline.handlers - INFO - Removed 1 features due to high correlation:
+2026-02-03 19:30:47,677 - pipeline.handlers - INFO -   - График
+2026-02-03 19:30:47,678 - pipeline.handlers - INFO -     (correlation 0.967 with 'Занятость')
+2026-02-03 19:30:47,678 - pipeline.handlers - INFO - Remaining features: 26
+2026-02-03 19:30:47,678 - pipeline.handlers - INFO - Saving feature metadata...
+2026-02-03 19:30:47,679 - pipeline.handlers - INFO -   Found 26 features
+2026-02-03 19:30:47,681 - pipeline.handlers - INFO -   Metadata saved to files/feature_metadata.json
+2026-02-03 19:30:47,681 - pipeline.handlers - INFO -   Feature names saved to files/feature_names.txt
+2026-02-03 19:30:47,682 - pipeline.handlers - INFO - Handling outliers...
+2026-02-03 19:30:47,686 - pipeline.handlers - INFO - Normalizing numeric features...
+2026-02-03 19:30:47,699 - pipeline.handlers - INFO -   Using RobustScaler (robust to outliers)
+2026-02-03 19:30:47,739 - pipeline.handlers - INFO -   Using StandardScaler (mean=0, std=1)
+2026-02-03 19:30:47,776 - pipeline.handlers - INFO - Splitting into X and y...
+2026-02-03 19:30:47,777 - pipeline.handlers - INFO -   Found 25 features:
+2026-02-03 19:30:47,777 - pipeline.handlers - INFO -     [0] Unnamed: 0
+2026-02-03 19:30:47,777 - pipeline.handlers - INFO -     [1] ЗП
+2026-02-03 19:30:47,777 - pipeline.handlers - INFO -     [2] Занятость
+2026-02-03 19:30:47,777 - pipeline.handlers - INFO -     [3] ЗП_рубли
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [4] Возраст
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [5] Город_очищенный
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [6] Есть_авто
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [7] Длина_названия_должности
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [8] Должность_менеджер
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [9] Должность_разработчик
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [10] Должность_аналитик
+2026-02-03 19:30:47,778 - pipeline.handlers - INFO -     [11] Должность_директор
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [12] Должность_специалист
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [13] Должность_инженер
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [14] Должность_руководитель
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [15] Высшее_образование
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [16] Техническое_образование
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [17] Столица
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [18] Пол_Мужчина
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     [19] Пол_Не указано
+2026-02-03 19:30:47,779 - pipeline.handlers - INFO -     ... and 5 more features
+2026-02-03 19:30:47,780 - pipeline.handlers - INFO -   Preparing target variable...
+2026-02-03 19:30:47,780 - pipeline.handlers - WARNING -   Found 7706 values <= 0 in salary (11.5%)
+2026-02-03 19:30:47,781 - pipeline.handlers - INFO -   Replaced with minimum positive salary: 0.01
+2026-02-03 19:30:47,783 - pipeline.handlers - INFO -   Before log: min=0, max=0, median=0, skew=-1.83
+2026-02-03 19:30:47,783 - pipeline.handlers - INFO -   Applying logarithmic transformation (log1p)
+2026-02-03 19:30:47,786 - pipeline.handlers - INFO -   After log: min=0.0147, max=0.3605, mean=0.2102, skew=-1.84
+2026-02-03 19:30:47,907 - pipeline.handlers - INFO -   X shape: (66945, 25), y shape: (66945,)
+2026-02-03 19:30:47,907 - pipeline.handlers - INFO -   X dtype: float64, y dtype: float64
+2026-02-03 19:30:47,912 - pipeline.handlers - INFO -   X min/max/mean: [-18.6888, 44.6913, 0.0676]
+2026-02-03 19:30:47,912 - pipeline.handlers - INFO -   y min/max/mean: [0.0147, 0.3605, 0.2102]
+2026-02-03 19:30:47,912 - pipeline.handlers - INFO -   y sample in RUB: min=0, max=0
+2026-02-03 19:30:47,912 - pipeline.handlers - INFO - Saving to .npy files...
+2026-02-03 19:30:47,913 - pipeline.handlers - INFO -   Validating data quality...
+2026-02-03 19:30:47,930 - pipeline.handlers - INFO -   X stats: mean=0.0676, std=0.8849
+2026-02-03 19:30:47,932 - pipeline.handlers - INFO -   y stats: mean=0.2102, std=0.0850, skew=-1.8409
+2026-02-03 19:30:47,953 - pipeline.handlers - INFO -   Saved: files/x_data.npy ((66945, 25), float64)
+2026-02-03 19:30:47,954 - pipeline.handlers - INFO -   Saved: files/y_data.npy ((66945,), float64)
+2026-02-03 19:30:47,954 - pipeline.handlers - INFO -   Feature names saved to files/feature_names.txt
+2026-02-03 19:30:47,955 - pipeline.handlers - INFO -   Feature metadata saved to files/feature_names.json
+2026-02-03 19:30:47,955 - pipeline.handlers - INFO -   Verifying saved files...
+2026-02-03 19:30:47,962 - pipeline.handlers - INFO -   Files loaded correctly
+2026-02-03 19:30:47,962 - pipeline.handlers - INFO -     X: (66945, 25), float64
+2026-02-03 19:30:47,962 - pipeline.handlers - INFO -     y: (66945,), float64
+2026-02-03 19:30:47,963 - pipeline.handlers - INFO -   Feature names match X size
+2026-02-03 19:30:48,585 - __main__ - INFO - ============================================================
+2026-02-03 19:30:48,585 - __main__ - INFO - IMPROVED processing completed successfully!
+2026-02-03 19:30:48,585 - __main__ - INFO - Created files in directory 'files':
+2026-02-03 19:30:48,585 - __main__ - INFO -   - x_data.npy (features matrix)
+2026-02-03 19:30:48,586 - __main__ - INFO -   - y_data.npy (target vector, log1p scale)
+2026-02-03 19:30:48,586 - __main__ - INFO -   - feature_names.txt (feature names)
+2026-02-03 19:30:48,586 - __main__ - INFO -   - feature_names.json (feature metadata)
+2026-02-03 19:30:48,586 - __main__ - INFO -   - feature_metadata.json (full metadata)
+2026-02-03 19:30:48,586 - __main__ - INFO -   - improved_pipeline.log (this log file)
+2026-02-03 19:30:48,586 - __main__ - INFO - 
+NEXT STEPS:
+2026-02-03 19:30:48,586 - __main__ - INFO - 1. Train model: python linear_model.py --x-data files/x_data.npy --y-data files/y_data.npy
+2026-02-03 19:30:48,587 - __main__ - INFO - 2. Use RidgeCV for automatic alpha selection
+2026-02-03 19:30:48,587 - __main__ - INFO - 3. The target is already log-transformed for better linearity
